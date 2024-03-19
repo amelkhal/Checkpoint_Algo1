@@ -1,0 +1,24 @@
+ALGORITHM SENTENCE
+VAR
+    nbc, nbv, nbw: INTEGER 
+    stc : STRING
+BEGIN
+    nbc := 0
+    nbw := 1
+    nbv := 0
+    write("type a sentence")
+    read(stc)
+REPEAT
+    IF (stc[nbc]=" ") THEN
+        nbw := nbw+1
+    END_IF
+    IF (stc[nbc] in ["a","e","i","o","u","y","A","E","I","O","U","Y"]) THEN
+        nbv := nbv+1
+    END_IF
+    nbc := nbc+1
+UNTIL (stc[nbc]=".")
+    nbw := nbw+1
+    write("number of characters is", nbc)
+    write("number of words is", nbw)
+    write("number of vowels is", nbv)
+END
